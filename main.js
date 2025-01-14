@@ -28,11 +28,17 @@ listContainer.addEventListener("click",function(e){
     }
 }, false);
 
+inputBox.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        addTask();
+    }
+});
+
 function saveData(){
     localStorage.setItem("data", listContainer.innerHTML);
 }
 function showTask(){
-    listContainer,innerHTML = localStorage.getItem("data");
+    listContainer.innerHTML = localStorage.getItem("data");
 }
 showTask();
 console.log(localStorage.getItem("data"));
